@@ -3,8 +3,6 @@
 ## About
 This project aims to explore the World Smartphone Market 2025 dataset containing over 1000 smartphone models from leading brands (Apple, Samsung, Xiaomi, Oppo, Vivo, Google, OnePlus, Realme, Infinix). The goal is to analyze pricing trends, compare specifications, identify value-for-money devices, track brand performance, and understand consumer perception in the 2025 global smartphone market.
 
-"A comprehensive dataset of 1000+ smartphone models with price, specs, battery, camera, display, performance, and realistic ratings for the year 2025. Perfect for price prediction, market analysis, brand comparison, and machine learning projects."
-
 ## Purposes Of The Project
 The major aim of this project is to gain deep insights into the 2025 global smartphone landscape to understand pricing strategies, feature-to-price relationships, brand positioning, flagship vs budget trends, and consumer rating patterns across segments.
 
@@ -16,9 +14,15 @@ The dataset contains detailed specifications and pricing for smartphones release
 - **Key Features:** Brand, Model, Price (USD), RAM (GB), Storage (GB), Camera (MP), Battery (mAh), Display Size (inch), Charging (Watt), 5G Support, OS, Processor, Rating, Release Month, Year  
 - **Technologies Used:** MySQL for data storage, cleaning, and advanced analysis; Looker Studio for interactive dashboards and visualizations.
 
-_Add a screenshot of the Looker Studio dashboard here:_  
+
+The data was obatined from [Kaggle](https://www.kaggle.com/datasets/shahzadi786/world-smartphone-market-2025/data)
+
 **Smartphone Market 2025 Dashboard**  
-**Live Dashboard:** Link to Looker Studio report
+
+ <img width="590" height="362" alt="image (1)" src="https://github.com/user-attachments/assets/d5251b8a-40f1-4231-ae1a-7b0c21a50b96" />
+
+
+**Live Dashboard:** [World Smartphone Market 2025](https://lookerstudio.google.com/reporting/f53164ed-575b-4688-bbad-153d66c01ce4)
 
 ## Analysis List
 - **Price & Segment Analysis:** Identify price distribution across budget, mid-range, premium, and flagship segments.  
@@ -35,30 +39,6 @@ _Add a screenshot of the Looker Studio dashboard here:_
 - Identified and removed exact duplicates using `ROW_NUMBER()` partitioning  
 - Final clean table: `worldsmartphonetable3`
 
-### Build a Database
-
-```sql
-CREATE DATABASE IF NOT EXISTS world_smartphone_market_2025;
-USE world_smartphone_market_2025;
-
-CREATE TABLE worldsmartphonetable3 (
-    brand TEXT,
-    model TEXT,
-    price_usd INT,
-    ram_gb INT,
-    storage_gb INT,
-    camera_mp INT,
-    battery_mah INT,
-    display_size_inch DOUBLE,
-    charging_watt INT,
-    5g_support TEXT,
-    os TEXT,
-    processor TEXT,
-    rating DOUBLE,
-    release_month TEXT,
-    year INT
-);
-````
 
 ### Feature Engineering
 
@@ -91,26 +71,26 @@ All queries in `sql/eda_queries.sql`. Key insights visualized in Looker Studio.
 
 ### Generic Questions
 
-* How many unique brands? → 9
-* Most models by brand? → Xiaomi (228), Vivo (244)
-* Price range in 2025? → $101 – $1,499
+* How many unique brands? - 9
+* Most models by brand? - Xiaomi (228), Vivo (244)
+* Price range in 2025? - $101 – $1,499
 
 ### Price & Segment
 
-* Most expensive phone? → Oppo V30 125 ($1,499)
-* Best value-for-money? → Xiaomi Mi 14 462 (0.0457 rating per dollar)
-* Highest rated segment? → Premium ($800–$1200) at 4.26 avg rating
+* Most expensive phone? - Oppo V30 125 ($1,499)
+* Best value-for-money? - Xiaomi Mi 14 462 (0.0457 rating per dollar)
+* Highest rated segment? - Premium ($800–$1200) at 4.26 avg rating
 
 ### Brand Analysis
 
-* Highest average rating? → Realme (4.31)
-* Most budget models (<$400)? → Xiaomi (54)
-* Flagship leader (> $1000)? → Oppo (94 models)
-* Best camera? → Apple (200 MP total)
+* Highest average rating? - Realme (4.31)
+* Most budget models (<$400)? - Xiaomi (54)
+* Flagship leader (> $1000)? - Oppo (94 models)
+* Best camera? - Apple (200 MP total)
 
 ### Feature Impact
 
-* Fast charging (65W+)? → Yes, slightly higher avg rating (4.24 vs 4.22)
+* Fast charging (65W+)? - Yes, slightly higher avg rating (4.24 vs 4.22)
 
 ### Rating & 5.0 Phones (2025)
 
@@ -134,17 +114,7 @@ battery_mah / price_usd
 All cleaning, feature engineering, and analysis queries are in `SQL_queries.sql`
 Final cleaned + enriched table: `worldsmartphonetable3`
 
-## Installation & Setup
 
-1. Clone the repo
-2. Run `sql/setup.sql` to create database and tables
-3. Import original CSV into `worldsmartphonetable1`
-4. Run full cleaning + feature engineering script
-5. Connect to Looker Studio → build interactive dashboards
-
-## Contributing
-
-Fork → improve queries, add ML price prediction model, enhance dashboards → open PR
 
 ## Maintained by
 
@@ -156,8 +126,3 @@ MIT License
 
 *Last updated: November 21, 2025*
 By @Sirmequtter │ Kenya
-
-```
-
-This preserves your content exactly, structured cleanly for GitHub Markdown.
-```

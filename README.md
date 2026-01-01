@@ -55,7 +55,7 @@ This will help us generate some new columns from existing ones.
 
 ## Exploratory Data Analysis (EDA)
 
-All queries in `sql/eda_queries.sql`. Key insights visualized in Looker Studio.
+All queries in `sql_queries.sql`. Key insights visualized in Looker Studio.
 
 ## Conclusion
 
